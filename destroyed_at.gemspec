@@ -26,8 +26,8 @@ Gem::Specification.new do |s|
   end
 
   if s.respond_to? :add_runtime_dependency then
-    s.add_runtime_dependency(%q<activerecord>.freeze, ["~> 5.0"])
-    s.add_runtime_dependency(%q<actionpack>.freeze, ["~> 5.0"])
+    s.add_runtime_dependency(%q<activerecord>.freeze, [">= 6.1.7.1"])
+    s.add_runtime_dependency(%q<actionpack>.freeze, [">= 6.1.7.1"])
     s.add_development_dependency(%q<bundler>.freeze, ["~> 2.3.26"])
     s.add_development_dependency(%q<rake>.freeze, [">= 0"])
     s.add_development_dependency(%q<minitest>.freeze, ["~> 5.1"])
@@ -35,9 +35,10 @@ Gem::Specification.new do |s|
     s.add_development_dependency(%q<byebug>.freeze, [">= 0"])
     s.add_development_dependency(%q<timecop>.freeze, [">= 0"])
     s.add_development_dependency(%q<database_cleaner>.freeze, ["= 1.0.1"])
+    s.add_development_dependency(%q<nokogiri>.freeze, [">= 1.11.4"])
   else
-    s.add_dependency(%q<activerecord>.freeze, ["~> 5.0"])
-    s.add_dependency(%q<actionpack>.freeze, ["~> 5.0"])
+    s.add_dependency(%q<activerecord>.freeze, [">= 6.1.7.1"])
+    s.add_dependency(%q<actionpack>.freeze, [">= 6.1.7.1"])
     s.add_dependency(%q<bundler>.freeze, ["~> 1.3"])
     s.add_dependency(%q<rake>.freeze, [">= 0"])
     s.add_dependency(%q<minitest>.freeze, ["~> 5.1"])
@@ -45,5 +46,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<byebug>.freeze, [">= 0"])
     s.add_dependency(%q<timecop>.freeze, [">= 0"])
     s.add_dependency(%q<database_cleaner>.freeze, ["= 1.0.1"])
+    s.add_development_dependency(%q<nokogiri>.freeze, [">= 1.11.4"])
+
   end
 end
