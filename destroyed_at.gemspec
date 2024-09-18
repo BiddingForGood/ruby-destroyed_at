@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.files = [".github/ISSUE_TEMPLATE.md".freeze, ".github/PULL_REQUEST_TEMPLATE.md".freeze, ".gitignore".freeze, ".ruby-version".freeze, ".travis.yml".freeze, "CHANGELOG.md".freeze, "CODE_OF_CONDUCT.md".freeze, "CONTRIBUTING.md".freeze, "Gemfile".freeze, "README.md".freeze, "Rakefile".freeze, "destroyed_at.gemspec".freeze, "lib/destroyed_at.rb".freeze, "lib/destroyed_at/belongs_to_association.rb".freeze, "lib/destroyed_at/has_many_association.rb".freeze, "lib/destroyed_at/has_one_association.rb".freeze, "lib/destroyed_at/mapper.rb".freeze, "lib/destroyed_at/routes.rb".freeze, "lib/destroyed_at/version.rb".freeze, "test/destroyed_at_test.rb".freeze, "test/mapper_test.rb".freeze, "test/scope_test.rb".freeze, "test/test_helper.rb".freeze]
   s.homepage = "https://github.com/dockyard/ruby-destroyed_at".freeze
   s.licenses = ["MIT".freeze]
-  s.required_ruby_version = Gem::Requirement.new("~> 2.0".freeze)
+  s.required_ruby_version = Gem::Requirement.new("~> 2.5.9".freeze)
   s.rubygems_version = "3.1.4".freeze
   s.summary = "Safe destroy for ActiveRecord.".freeze
   s.test_files = ["test/destroyed_at_test.rb".freeze, "test/mapper_test.rb".freeze, "test/scope_test.rb".freeze, "test/test_helper.rb".freeze]
@@ -28,7 +28,7 @@ Gem::Specification.new do |s|
   if s.respond_to? :add_runtime_dependency then
     s.add_runtime_dependency(%q<activerecord>.freeze, ["~> 5.0"])
     s.add_runtime_dependency(%q<actionpack>.freeze, ["~> 5.0"])
-    s.add_development_dependency(%q<bundler>.freeze, ["~> 1.3"])
+    s.add_development_dependency(%q<bundler>.freeze, ["~> 2.3.26"])
     s.add_development_dependency(%q<rake>.freeze, [">= 0"])
     s.add_development_dependency(%q<minitest>.freeze, ["~> 5.1"])
     s.add_development_dependency(%q<sqlite3>.freeze, [">= 0"])

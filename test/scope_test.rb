@@ -54,7 +54,12 @@ describe 'Scopes' do
 
       before do
         post.destroy
+        comment_2.destroy
+        comment_3.destroy
+        comment_4.destroy
         comment_2.update(destroyed_at: post.destroyed_at - 1.hour)
+        comment_3.update(destroyed_at: post.destroyed_at - 1.hour)
+        comment_4.update(destroyed_at: post.destroyed_at - 1.hour)
       end
 
       it 'returns all child records with a destroyed_at time that matches the passed in time' do
