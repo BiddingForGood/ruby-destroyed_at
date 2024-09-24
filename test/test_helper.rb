@@ -6,7 +6,7 @@ require 'byebug'
 require 'timecop'
 require 'database_cleaner'
 
-class MiniTest::Spec
+class Minitest::Spec
   class << self
     alias :context :describe
   end
