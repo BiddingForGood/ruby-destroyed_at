@@ -38,7 +38,7 @@ module DestroyedAt
   def destroy(timestamp = nil)
     with_transaction_returning_status do
       timestamp ||= @marked_for_destruction_at || current_time_from_proper_timezone
-      write_attribute(:destroyed_at, timestamp)
+      raw_write_attribute(:destroyed_at, timestamp)
 
       run_callbacks(:destroy) do
         destroy_associations
@@ -70,7 +70,7 @@ module DestroyedAt
     run_callbacks(:restore) do
       if state = (self.class.unscoped.where(self.class.primary_key => id).update_all(destroyed_at: nil) == 1)
         _restore_associations
-        write_attribute(:destroyed_at, nil)
+        raw_write_attribute(:destroyed_at, nil)
         @destroyed = false
         true
       end
@@ -102,7 +102,7 @@ module DestroyedAt
       if assoc.options[:through] && assoc.options[:dependent] == :destroy
         assoc = association(assoc.options[:through])
       end
-      assoc.scope.each do |r|
+      assoc.association_scope.each do |r|
         if r.respond_to?(:restore) && r.destroyed_at == self.destroyed_at
           r.restore
           reload_association = true
